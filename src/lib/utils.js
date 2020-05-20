@@ -24,5 +24,19 @@ module.exports = {
       style: 'currency', 
       currency: 'AKZ'
     }).format(price/100)
+  },  
+  formatNif(value) {
+    //Mascara para o NIF
+    value = value.replace(/\D/g,"")
+
+    if (value.length > 9)
+      value = value.slice(0, -1)
+
+    value = value.replace(/(\d{3})(\d)/, "$1 $2")
+
+    value = value.replace(/(\d{3})(\d)/, "$1 $2")
+
+    return value
+
   }
 }

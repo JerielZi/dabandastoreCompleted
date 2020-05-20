@@ -30,13 +30,16 @@
     <input 
       type="password"
       name="password"
-      placeholder="Escolha uma senha segura"
+      {% if not user.id %}
+        placeholder="Escolha uma senha segura"
+      {% else %}
+        placeholder="Introduza sua senha para atualizar o seu registo"
+      {% endif %}
     >
   </div>
 </div>
 
 {% if not user.id %}
-
   <div class="item"> 
     <div>Repetir Senha</div>
     <div class="input">
