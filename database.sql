@@ -37,11 +37,11 @@ ALTER TABLE "files" ADD FOREIGN KEY ("product_id") REFERENCES "products" ("id");
 
 CREATE TABLE "users" (
   "id" SERIAL PRIMARY KEY,
-  "nome" text NOT NULL,
+  "name" text NOT NULL,
   "email" text UNIQUE NOT NULL,
   "password" text NOT NULL,
   "nif" text UNIQUE NOT NULL,
-  "adress" text,
+  "address" text,
   "created_at" timestamp DEFAULT (now()),
   "updated_at" timestamp DEFAULT (now())
 );
