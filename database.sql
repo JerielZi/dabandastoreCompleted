@@ -40,7 +40,7 @@ CREATE TABLE "users" (
   "nome" text NOT NULL,
   "email" text UNIQUE NOT NULL,
   "password" text NOT NULL,
-  "nif" int UNIQUE NOT NULL,
+  "nif" text UNIQUE NOT NULL,
   "adress" text,
   "created_at" timestamp DEFAULT (now()),
   "updated_at" timestamp DEFAULT (now())
