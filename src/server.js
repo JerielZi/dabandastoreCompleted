@@ -8,6 +8,11 @@ const session = require('./config/session')
 const server = express()
 
 server.use(session)
+server.use((req, res, next) => {
+  res.locals.session = req.session
+  next()
+})
+
 //Responsável por fazer o o req.body nas routes.js funcionar.
 server.use(express.urlencoded({extended: true}))
 server.use(express.static('public'))

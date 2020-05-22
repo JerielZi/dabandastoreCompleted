@@ -5,7 +5,7 @@ CREATE TABLE "products" (
   "id" SERIAL PRIMARY KEY,
   "category_id" int NOT NULL,
   "user_id" int,
-  "nome" text NOT NULL,
+  "name" text NOT NULL,
   "description" text NOT NULL,
   "old_price" int,
   "price" int NOT NULL,
