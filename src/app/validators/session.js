@@ -34,12 +34,12 @@ async function forgot(req, res, next) {
       error: "Email não registado!"
     })
 
+    req.user = user
+   
     next()
   }catch(err) {
     console.error(err)
   }
-
-  next()
 }
 
 module.exports = {
