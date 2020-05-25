@@ -26,11 +26,12 @@ module.exports = {
         return res.send('Please, fill all the fields!')
       }
     }
-
     // Configurações para armazenamento de imagens
     if (req.files.length == 0)
       return res.send('Please, send at least one image')
 
+    req.body.user_id = req.session.userId 
+    
     let results = await Product.create(req.body)
     const productId = results.rows[0].id
     //Array de promessas, para aguardar a criação da imagem e depois de esperar
